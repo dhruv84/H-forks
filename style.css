@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+:root {
+  --color-1: #012307;
+  --color-2: #d1d0d1;
+
+  --color-3: #fd94c3;
+  --color-4: #fdbb36;
+
+  --color-5: #783b0d;
+  --color-6: #ceae93;
+
+  --color-7: #dbdcd7;
+  --color-8: #cb401d;
+
+  --color-9: #456d01;
+  --color-10: #e5a818;
+
+  --color-11: #ed4401;
+  --color-12: #ff8b00;
+
+  --font-1: "Quicksand", sans-serif;
+  --font-2: "Sacramento", sans-serif;
+  --font-3: "Prata", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  image-rendering: optimizeQuality;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Megrim", sans-serif;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/*======================= Header & Navigation */
+.header {
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  padding: 0 3rem;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  z-index: 5;
+  transition: all 0.3s;
+  animation: AnimNav 0.5s ease-in-out backwards;
+}
+
+.headTop {
+  top: 0;
+}
+
+.navigation {
+  width: 0;
+  align-self: stretch;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+}
+
+.navigate {
+  width: 50%;
+  margin-right: 0.5rem;
+}
+
+.nav__menu {
+  height: 100%;
+  padding: 0 2rem;
+  display: flex;
+  column-gap: 1.5rem;
+  align-items: center;
+  background-image: linear-gradient(to right, var(--color-1), var(--color-2));
+}
+
+.nav__link {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--color-7);
+}
+
+.navigation__toggle {
+  display: flex;
+  cursor: pointer;
+}
+
+.toggle__icon {
+  font-size: 2rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggle__icon:hover {
+  transform: scale(1.2) rotate(360deg);
+}
+
+/*======================= Section Foods */
+.section__foods {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.section__foods-data {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 12rem 0 0 10rem;
+  background-color: #f8f8f8;
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
+}
+
+.section__heading {
+  width: fit-content;
+  font-size: 7rem;
+  font-weight: 700;
+  text-align: center;
+  color: transparent;
+  margin-bottom: 5rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, var(--color-1), var(--color-2));
+  animation: AnimHeading 0.5s ease-in-out 0.5s backwards;
+}
+
+.section__para {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.5rem;
+  color: transparent;
+  width: fit-content;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, var(--color-1), var(--color-2));
+  display: flex;
+  align-items: center;
+  animation: AnimPara 0.5s ease-in-out 1s backwards;
+}
+
+.parastyle {
+  display: inline-block;
+  width: 2px;
+  height: 1.6rem;
+  background-color: var(--color-1);
+  animation: paraStyle 1.5s ease-out infinite;
+}
+
+.heading__icon {
+  font-size: 10rem;
+}
+
+.heading-1 {
+  background-image: linear-gradient(to right, var(--color-3), var(--color-4));
+}
+.heading-2 {
+  background-image: linear-gradient(to right, var(--color-5), var(--color-6));
+}
+.heading-3 {
+  background-image: linear-gradient(to right, var(--color-8), var(--color-7));
+}
+.heading-4 {
+  background-image: linear-gradient(to right, var(--color-11), var(--color-12));
+}
+
+.section__img-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.img__slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.img-S {
+  flex: 0 0 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation-Front======================= */
+@keyframes AnimNav {
+  0% {
+    transform: translateY(-50rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes paraStyle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes AnimHeading {
+  0% {
+    transform: translateX(-50rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes AnimPara {
+  0% {
+    transform: translateX(-100rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*======================= Popular Foods */
+.popular__meals {
+  min-height: 100vh;
+  width: 100%;
+  margin-top: 100vh;
+}
+
+.section__sub-heading {
+  color: var(--color-1);
+  font-size: 3rem;
+}
+
+.popular__meals-data {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+.meal__card {
+  width: 20rem;
+  height: 25rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.meal__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  transition: all 1s;
+}
+
+.meal__card-data {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+}
+
+.meal__name {
+  width: 100%;
+  background-color: #fff;
+  padding: 0 1rem;
+  /* text-transform: uppercase; */
+}
+
+.btn {
+  font-family: "Megrim", sans-serif;
+  letter-spacing: 5px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  background-color: #fff;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.btn__meals {
+  font-family: "Megrim", sans-serif;
+  letter-spacing: 5px;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 2px solid var(--color-1);
+  outline: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  color: var(--color-1);
+  display: flex;
+  align-items: center;
+}
+
+.btn__icon {
+  font-size: 2rem;
+  width: 2rem;
+  transition: transform 0.3s;
+}
+
+.btn__meals:hover .btn__icon {
+  transform: translateX(0.3rem);
+}
+
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+.meal__card:hover .meal__card-img {
+  filter: blur(1.5px);
+  transform: scale(1);
+}
+
+.meal__card:hover .meal__card-data {
+  bottom: 0;
+}
+
+.meal__card:hover .meal__name {
+  animation: nameAnim 0.8s ease-in-out backwards;
+}
+
+.meal__card:hover .btn {
+  animation: buttonAnim 0.8s ease-in-out 0.8s backwards;
+}
+
+/* Animation-Meals========================= */
+@keyframes buttonAnim {
+  0% {
+    transform: translateY(500px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes nameAnim {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* About us========================= */
+.about {
+  min-height: 100vh;
+}
+
+.para {
+  background-color: rgba(0, 0, 0, 0.015);
+  width: 60%;
+}
+
+.section__para2 {
+  letter-spacing: unset;
+  font-family: var(--font-1);
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+  padding: 5rem 3rem;
+  text-align: justify;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-1), var(--color-2));
+  /* margin: 0 auto; */
+}
+
+/* Footer============================ */
